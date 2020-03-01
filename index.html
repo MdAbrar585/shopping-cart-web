@@ -15,8 +15,8 @@
    <section>
       <div class="container">
          <div class="cart">
-            <div class="col-md-12 col-lg-10 mx-auto">
-               <div class="cart-item">
+            <div  class="col-md-12 col-lg-10 mx-auto">
+               <div id="cart" class="cart-item">
                   <div class="row">
                      <div class="col-md-7 center-item">
                         <img src="images/product-1.png" alt="">
@@ -30,12 +30,13 @@
                            <button id="addItem" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
                         <h5>$ <span id="iphonePrice">1219</span></h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
+                        <!-- <img id="img1" src="images/remove.png" alt="" class="remove-item"> -->
+                        <button id="img1" style="background-image: url(images/remove.png);width:35px;height: 35px;"></button>
                      </div>
                   </div>
                </div>
 
-               <div class="cart-item">
+               <div id="cart1" class="cart-item">
                   <div class="row">
                      <div class="col-md-7 center-item mx-auto">
                         <img src="images/product-2.png" alt="">
@@ -49,7 +50,8 @@
 
                         </div>
                         <h5>$ <span id="casePrice">59</span></h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
+                        <!-- <img src="images/remove.png" alt="" class="remove-item"> -->
+                        <button id="img2" style="background-image: url(images/remove.png);width:35px;height: 35px;"></button>
                      </div>
                   </div>
                </div>
@@ -210,8 +212,17 @@
          }
       })
 
+      const addItemButton1 = document.getElementById("img1");
+      addItemButton1.addEventListener("click", function () {
+         const iphoneArea1 = document.getElementById("cart");
+         iphoneArea1.style.display = "none";
+      })
 
-
+      const addItemButton2 = document.getElementById("img2");
+      addItemButton2.addEventListener("click", function () {
+         const iphoneArea2 = document.getElementById("cart1");
+         iphoneArea2.style.display = "none";
+      })
       
 
    </script>
