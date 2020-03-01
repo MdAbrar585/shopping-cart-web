@@ -43,12 +43,12 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="caseReduce" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="addedCaseItem" type="text" class="form-control text-center" value="1">
+                           <button id="caseAdd" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$ <span id="casePrice">59</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -104,7 +104,35 @@
          const iphonePriceNumber = parseFloat(iphonePrice);
          const totalIphoneReducePrice = iphonePriceNumber - 1219;
          document.getElementById("iphonePrice").innerText = totalIphoneReducePrice;
-         
+      });
+
+      const addCaseItemButton = document.getElementById("caseAdd");
+      addCaseItemButton.addEventListener("click",function(){
+         // console.log("Clicked");
+         const addedCaseItem = document.getElementById("addedCaseItem").value;
+         const addedCaseItemNumber = parseFloat(addedCaseItem);
+         const totalCaseItem = addedCaseItemNumber + 1;
+         document.getElementById("addedCaseItem").value = totalCaseItem;
+
+         const casePrice = document.getElementById("casePrice").innerText;
+         const casePriceNumber = parseFloat(casePrice);
+         const totalCasePrice = casePriceNumber + 59;
+         document.getElementById("casePrice").innerText = totalCasePrice;
+
+      });
+
+      const reduceCaseItemButton = document.getElementById("caseReduce");
+      reduceCaseItemButton.addEventListener("click",function(){
+         // console.log("Clicked");
+         const reducedCaseItem = document.getElementById("addedCaseItem").value;
+         const reducedCaseItemNumber = parseFloat(reducedCaseItem);
+         const totalCaseItemReduce = reducedCaseItemNumber - 1;
+         document.getElementById("addedCaseItem").value = totalCaseItemReduce;
+
+         const casePrice = document.getElementById("casePrice").innerText;
+         const casePriceNumber = parseFloat(casePrice);
+         const totalCasePriceReduce = casePriceNumber - 59;
+         document.getElementById("casePrice").innerText = totalCasePriceReduce;
 
       })
 
