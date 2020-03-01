@@ -64,9 +64,9 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$ <span id="subtotal">1,278</span></h5>
+                        <h5>$ <span id="subtotal">1278</span></h5>
                         <h5>$0</h5>
-                        <h5> <span id="total">$1,278</span> </h5>
+                        <h5> <span id="total">$1278</span> </h5>
                      </div>
                   </div>
                </div>
@@ -111,6 +111,21 @@
          // console.log("clicked");
          const reduceItem = document.getElementById("addedItem").value;
          const reduceItemNumber = parseFloat(reduceItem);
+         // ekahan theke shuru
+         if(reduceItemNumber == 0)
+         {
+            document.getElementById("addedItem").value = 0;
+            document.getElementById("iphonePrice").value = 0;
+            const getElementOfSubtotal = document.getElementById("subtotal").innerText;
+            const getElementOfSubtotalNumber = parseFloat(getElementOfSubtotal);
+            document.getElementById("subtotal").value = 1278-1219;
+
+            const getElementOfTotal = document.getElementById("total").innerText;
+            const getElementOfTotalNumber = parseFloat(getElementOfTotal);
+            document.getElementById("total").value = 1278-1219;
+            
+         }
+         else{
          const totalReduce = reduceItemNumber - 1;
          document.getElementById("addedItem").value = totalReduce;
 
@@ -130,7 +145,7 @@
 
          // total section
          document.getElementById("total").innerText = totalSubtotal;
-
+         }
       });
 
       const addCaseItemButton = document.getElementById("caseAdd");
@@ -164,9 +179,16 @@
 
       const reduceCaseItemButton = document.getElementById("caseReduce");
       reduceCaseItemButton.addEventListener("click",function(){
-         // console.log("Clicked");
          const reducedCaseItem = document.getElementById("addedCaseItem").value;
          const reducedCaseItemNumber = parseFloat(reducedCaseItem);
+         // ekahan theke shuru
+         if( reducedCaseItemNumber == 0){
+            document.getElementById("addedCaseItem").value = 0;
+            document.getElementById("casePrice").value = 0;
+            document.getElementById("subtotal").value = 0;
+            document.getElementById("total").value = 0;
+         }
+         else{
          const totalCaseItemReduce = reducedCaseItemNumber - 1;
          document.getElementById("addedCaseItem").value = totalCaseItemReduce;
 
@@ -185,8 +207,12 @@
          document.getElementById("subtotal").innerText = totalSubtotal;
 
          document.getElementById("total").innerText = totalSubtotal;
-         
+         }
       })
+
+
+
+      
 
    </script>
 </body>
