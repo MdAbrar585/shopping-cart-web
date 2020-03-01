@@ -29,7 +29,7 @@
                            <input id="addedItem" type="text" class="form-control text-center" value="1">
                            <button id="addItem"class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5>$ <span id="iphonePrice">1219</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -85,8 +85,14 @@
          const addedItem = document.getElementById("addedItem").value;
          // console.log(addedItem);
          const addedItemNumber = parseFloat(addedItem);
-         var totalItem = addedItemNumber + 1;
+        
+         
+         const totalItem = addedItemNumber + 1;
+         const iphonePrice = document.getElementById("iphonePrice").innerText;
+         const iphonePriceNumber = parseFloat(iphonePrice);
          document.getElementById("addedItem").value = totalItem;
+         const totalIphonePrice = iphonePriceNumber +1219;
+         document.getElementById("iphonePrice").innerText = totalIphonePrice;
          
       })
 
